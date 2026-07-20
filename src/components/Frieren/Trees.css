@@ -1,0 +1,25 @@
+/* ============================================================
+   Trees.css — Árvores da cena Frieren
+   ============================================================ */
+
+.tree {
+  position: absolute;
+  bottom: 20vh;
+  width: 350px;
+  z-index: 4;
+  animation: treeWind 6s ease-in-out infinite;
+}
+
+.leftTree {
+  left: -40px;
+}
+
+.rightTree {
+  right: -40px;
+  transform: scaleX(-1);
+}
+
+@keyframes treeWind {
+  0%, 100% { transform: rotate(0deg); }
+  50%       { transform: rotate(1deg); }
+}

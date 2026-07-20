@@ -1,0 +1,220 @@
+.harryPage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #050a14;
+}
+
+.hogwarts-castle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(10, 20, 40, 0.8), transparent);
+  mask-image: radial-gradient(circle at 50% 100%, black, transparent 70%);
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.owl-fly {
+  position: absolute;
+  font-size: 30px;
+  z-index: 10;
+  cursor: pointer;
+  animation: owlMove 15s linear infinite;
+}
+
+.owl-fly::after { content: "🦉"; }
+
+@keyframes owlMove {
+  from { left: -50px; top: 20%; transform: scaleX(1); }
+  to { left: calc(100% + 50px); top: 10%; transform: scaleX(1); }
+}
+
+.harryParticles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.harryParticle {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffd700;
+  animation: particleUp linear infinite;
+}
+
+@keyframes particleUp {
+  from { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.harryCandles {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.harryCandle {
+  position: absolute;
+  width: 12px;
+  height: 60px;
+  background: #fdf8e1;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  animation: candleFloat ease-in-out infinite;
+}
+
+.harryCandleFlame {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 15px;
+  background: radial-gradient(circle, #ff8c00, #ffd700);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 15px #ffd700;
+  animation: flameWobble 0.5s infinite alternate;
+}
+
+@keyframes candleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes flameWobble {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(1.1) rotate(2deg); }
+}
+
+.marauders-map {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  z-index: 20;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.4s;
+}
+
+.map-icon { font-size: 30px; }
+
+.marauders-map.active {
+  width: 300px;
+  background: rgba(20, 15, 10, 0.95);
+  border-color: #ffd700;
+}
+
+.footsteps {
+  font-size: 24px;
+  animation: walk 2s infinite linear;
+  margin-bottom: 10px;
+}
+
+@keyframes walk {
+  0% { transform: translateX(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(50px) rotate(10deg); opacity: 0; }
+}
+
+.map-content p {
+  color: #ffd700;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.harryOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.6));
+  z-index: 5;
+}
+
+.harryContent {
+  position: relative;
+  z-index: 15;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.harryTag {
+  display: block;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.harryContent h1 {
+  font-size: 48px;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.harryContent p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.harryNextBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 30px;
+  color: #ffd700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.harryNextBtn:hover {
+  background: #ffd700;
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.harry-toast {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 15, 30, 0.9);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid #ffd700;
+  color: #fff;
+  z-index: 100;
+  animation: toastIn 0.5s ease-out;
+  text-align: center;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}

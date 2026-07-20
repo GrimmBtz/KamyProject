@@ -1,0 +1,27 @@
+/* ============================================================
+   index.css — Reset e variáveis globais
+   Não deve conter estilos de componentes específicos.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --background: #07111F;
+  --background2: #10233D;
+  --orange: #E67E22;
+  --paper: #F3E7D1;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: white;
+  overflow-x: hidden;
+}

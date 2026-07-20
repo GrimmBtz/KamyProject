@@ -1,0 +1,260 @@
+/* ============================================================
+   Galeria.css — Galeria de Interesses
+   ============================================================ */
+
+.galeriaPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.galeria-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(6, 10, 25, 0.35),
+    rgba(6, 10, 25, 0.65)
+  );
+  z-index: 5;
+}
+
+.galeriaPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.galeriaContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid de Fotos */
+.fotos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.foto-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: photoAppear 0.6s ease-out forwards;
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.foto-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.foto-item:hover img {
+  transform: scale(1.05);
+}
+
+.galeriaTag {
+  display: block;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #d7b892;
+  margin-bottom: 20px;
+}
+
+.galeriaContent h1 {
+  font-size: 52px;
+  font-family: "Cormorant Garamond", serif;
+  color: #f5e7d2;
+  margin-bottom: 20px;
+}
+
+.galeriaContent > p {
+  font-size: 19px;
+  color: #ccc;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de Interesses */
+.galeriaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.galeriaCard {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 35px 25px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.galeriaCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 200, 100, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.galeriaCard:hover {
+  transform: translateY(-15px) scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 200, 100, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.galeriaCard:hover::before {
+  opacity: 1;
+}
+
+.galeriaCardEmoji {
+  font-size: 50px;
+  margin-bottom: 15px;
+  display: inline-block;
+  animation: emojiFloat 3s ease-in-out infinite;
+}
+
+.galeriaCard:hover .galeriaCardEmoji {
+  animation: emojiPulse 0.6s ease-in-out;
+}
+
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes emojiPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.galeriaCard h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.galeriaCard p {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.easter-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: rgba(255, 200, 100, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.easter-egg-message {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(100, 150, 255, 0.2), rgba(150, 100, 255, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 20px;
+  color: #9fc8ff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  animation: messageAppear 0.4s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.galeriaNextBtn {
+  display: inline-block;
+  padding: 18px 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.galeriaNextBtn:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .galeriaContent h1 { font-size: 36px; }
+  .galeriaGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .galeriaGrid { grid-template-columns: 1fr; }
+}

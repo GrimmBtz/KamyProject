@@ -1,0 +1,182 @@
+.frierenPage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frierenBackground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 1;
+  animation: frierenZoom 20s linear infinite alternate;
+}
+
+@keyframes frierenZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.frierenOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent, rgba(10, 20, 40, 0.7));
+  z-index: 2;
+}
+
+.frierenHeroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.frierenTag {
+  display: block;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #9fc8ff;
+  margin-bottom: 20px;
+}
+
+.frierenHeroContent h1 {
+  font-size: 48px;
+  font-family: "Cormorant Garamond", serif;
+  color: #f5e7d2;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.frierenHeroContent p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.frierenNextBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(159, 200, 255, 0.1);
+  border: 1px solid #9fc8ff;
+  border-radius: 30px;
+  color: #9fc8ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.frierenNextBtn:hover {
+  background: #9fc8ff;
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(159, 200, 255, 0.3);
+}
+
+/* Interações */
+.interactive-item {
+  position: absolute;
+  cursor: pointer;
+  z-index: 5;
+  font-size: 24px;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.interactive-item:hover {
+  transform: scale(1.5) rotate(10deg);
+}
+
+.flower { animation: sway 3s infinite ease-in-out; }
+.butterfly { animation: fly 5s infinite ease-in-out; }
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes fly {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -20px); }
+}
+
+/* Grimório */
+.grimorio-container {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 15;
+  cursor: pointer;
+  text-align: center;
+}
+
+.grimorio-book {
+  font-size: 40px;
+  animation: float 3s infinite ease-in-out;
+}
+
+.grimorio-glow {
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(159, 200, 255, 0.4), transparent 70%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.grimorio-reveal {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 250px;
+  background: rgba(10, 20, 40, 0.9);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #9fc8ff;
+  color: #eee;
+  font-size: 14px;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast */
+.frieren-toast {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 20, 40, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(159, 200, 255, 0.3);
+  color: #fff;
+  z-index: 100;
+  animation: toastIn 0.5s ease-out;
+  text-align: center;
+  max-width: 80vw;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}

@@ -1,0 +1,41 @@
+.bookContainer{
+
+position:absolute;
+
+left:50%;
+
+bottom:18vh;
+
+transform:translateX(-50%);
+
+z-index:8;
+
+}
+
+.book{
+
+width:140px;
+
+animation:floatBook 5s ease-in-out infinite;
+
+cursor:pointer;
+
+filter:drop-shadow(0 0 20px rgba(120,180,255,.6));
+
+}
+
+@keyframes floatBook{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}

@@ -1,0 +1,40 @@
+.frierenHero{
+
+position:absolute;
+
+bottom:13vh;
+right:8%;
+
+z-index:8;
+
+animation:appear 2s ease;
+
+}
+
+.frierenHero img{
+
+height:550px;
+
+filter:
+
+drop-shadow(0 20px 35px rgba(0,0,0,.3));
+
+}
+
+@keyframes appear{
+
+from{
+
+opacity:0;
+transform:translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+transform:none;
+
+}
+
+}
