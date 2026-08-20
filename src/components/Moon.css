@@ -1,0 +1,32 @@
+.moon{
+    position:absolute;
+
+    top:80px;
+    right:120px;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#f5f1d5;
+
+    box-shadow:
+        0 0 40px #fff4b0,
+        0 0 80px #fff0aa;
+
+    animation:pulse 5s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.05);
+        box-shadow:
+            0 0 60px #fff7d1,
+            0 0 100px #fff8c7;
+
+    }
+
+}

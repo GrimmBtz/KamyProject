@@ -1,0 +1,123 @@
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #020617;
+}
+
+.intro-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  animation: fadeInIntro 2s ease-out;
+}
+
+@keyframes fadeInIntro {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.intro-title {
+  font-size: 4rem;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 1rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.intro-subtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+}
+
+.intro-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+  backdrop-filter: blur(5px);
+}
+
+.intro-btn:hover {
+  background: white;
+  color: #020617;
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .intro-title { font-size: 2.5rem; }
+  .intro-subtitle { font-size: 1rem; }
+}
+
+/* Abertura cósmica original — texto em português inspirado na ideia de uma linha do tempo */
+.intro-opening {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  pointer-events: none;
+  opacity: .52;
+  mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
+}
+
+.intro-opening span {
+  color: rgba(173, 213, 255, .58);
+  font: 500 clamp(16px, 2vw, 28px)/1.25 "Cormorant Garamond", serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(108, 191, 255, .72);
+  animation: openingDrift 7.5s ease-in-out infinite;
+}
+
+.intro-universe-seal {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  z-index: 12;
+  transform: translateX(-50%);
+  color: rgba(255, 224, 157, .78);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 14px rgba(255, 208, 112, .5);
+  white-space: nowrap;
+}
+
+.intro-universe-seal b { color: #9bdcff; font-weight: 400; padding: 0 5px; }
+
+@keyframes openingDrift {
+  0%, 100% { opacity: .12; transform: translateY(15px) scale(.96); }
+  20%, 70% { opacity: .84; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+  .intro-opening { gap: 6px; }
+  .intro-opening span { letter-spacing: 2px; font-size: 16px; }
+  .intro-universe-seal { top: 22px; letter-spacing: 1.8px; font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-opening span { animation: none; opacity: .55; }
+}

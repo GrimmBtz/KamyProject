@@ -1,0 +1,130 @@
+.petsPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.petsContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1100px;
+  width: 100%;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.petsTag {
+  display: block;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #d7b892;
+  margin-bottom: 15px;
+}
+
+.petsContent h1 {
+  font-size: 48px;
+  font-family: "Cormorant Garamond", serif;
+  color: #f5e7d2;
+  margin-bottom: 15px;
+}
+
+.petsContent > p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 50px;
+}
+
+.petsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.petCard {
+  background: white;
+  padding: 15px 15px 40px 15px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: rotate(var(--rotation, 0deg));
+}
+
+.petCard:nth-child(1) { --rotation: -2deg; }
+.petCard:nth-child(2) { --rotation: 1deg; }
+.petCard:nth-child(3) { --rotation: -1deg; }
+
+.petCard:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 20;
+}
+
+.petPhotoContainer {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #eee;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.petRealPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.petInfo h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.petType {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.petDesc {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.petsNextBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(215, 184, 146, 0.2);
+  border: 1px solid #d7b892;
+  border-radius: 30px;
+  color: #f5e7d2;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.petsNextBtn:hover {
+  background: #d7b892;
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .petsContent h1 { font-size: 32px; }
+  .petsGrid { grid-template-columns: 1fr; max-width: 350px; margin: 0 auto 40px; }
+}

@@ -1,0 +1,704 @@
+.harryPage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #050a14;
+  transition: background 1s ease;
+}
+
+.harryPage.patronus-active {
+  background: #0a1a2f;
+}
+
+/* Patrono */
+.patronus-trigger {
+  position: absolute;
+  top: 40px;
+  right: 100px;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.3s;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.patronus-trigger:hover {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.patronus-spirit {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.patronus-light {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(173, 216, 230, 0.6), transparent 70%);
+  border-radius: 50%;
+  animation: patronusPulse 2s infinite alternate;
+}
+
+.patronus-message {
+  margin-top: 30px;
+  color: #add8e6;
+  font-size: 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  max-width: 600px;
+  text-shadow: 0 0 15px rgba(173, 216, 230, 0.8);
+  animation: fadeIn 2s ease-out;
+}
+
+@keyframes patronusPulse {
+  from { transform: scale(0.8); opacity: 0.4; }
+  to { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* Carta da Lufa-Lufa */
+.hufflepuff-letter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease;
+  padding: 20px;
+}
+
+.hufflepuff-letter {
+  background: #fdf5e6;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+  color: #333;
+  font-family: "Cormorant Garamond", serif;
+  position: relative;
+  border: 3px solid #e5c100;
+  animation: letterDrop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes letterDrop {
+  from { transform: translateY(-100vh) rotate(-10deg); opacity: 0; }
+  to { transform: translateY(0) rotate(0); opacity: 1; }
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e5c100;
+  padding-bottom: 15px;
+}
+
+.crest {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.letter-header h3 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.letter-body p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+}
+
+.signature {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 30px;
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+.close-letter {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #1a1a1a;
+  border: 1px solid #e5c100;
+  color: #e5c100;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.close-letter:hover {
+  background: #e5c100;
+  color: #1a1a1a;
+}
+
+/* Estilos de Cenário */
+.hogwarts-castle {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(10, 20, 40, 0.8), transparent);
+  mask-image: radial-gradient(circle at 50% 100%, black, transparent 70%);
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.owl-fly {
+  position: absolute;
+  font-size: 40px;
+  z-index: 10;
+  cursor: pointer;
+  animation: owlMove 15s linear infinite;
+}
+
+.owl-fly::after { content: "🦉"; }
+
+@keyframes owlMove {
+  from { left: -100px; top: 20%; transform: scaleX(1); }
+  to { left: calc(100% + 100px); top: 10%; transform: scaleX(1); }
+}
+
+.harryParticles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.harryParticle {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffd700;
+  animation: particleUp linear infinite;
+}
+
+@keyframes particleUp {
+  from { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.harryCandles {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.harryCandle {
+  position: absolute;
+  width: 12px;
+  height: 60px;
+  background: #fdf8e1;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  animation: candleFloat ease-in-out infinite;
+}
+
+.harryCandleFlame {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 15px;
+  background: radial-gradient(circle, #ff8c00, #ffd700);
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 15px #ffd700;
+  animation: flameWobble 0.5s infinite alternate;
+}
+
+@keyframes candleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes flameWobble {
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(1.1) rotate(2deg); }
+}
+
+.marauders-map {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  z-index: 20;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.4s;
+}
+
+.map-icon { font-size: 30px; }
+
+.marauders-map.active {
+  width: 300px;
+  background: rgba(20, 15, 10, 0.95);
+  border-color: #ffd700;
+}
+
+.footsteps {
+  font-size: 24px;
+  animation: walk 2s infinite linear;
+  margin-bottom: 10px;
+}
+
+@keyframes walk {
+  0% { transform: translateX(0) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(50px) rotate(10deg); opacity: 0; }
+}
+
+.map-content p {
+  color: #ffd700;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.harryOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.6));
+  z-index: 5;
+}
+
+.harryContent {
+  position: relative;
+  z-index: 15;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.harryTag {
+  display: block;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.harryContent h1 {
+  font-size: 48px;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.harry-text-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 40px;
+}
+
+.harry-text-scroll::-webkit-scrollbar { width: 5px; }
+.harry-text-scroll::-webkit-scrollbar-thumb { background: #ffd700; border-radius: 10px; }
+
+.harryContent p {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.harryNextBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid #ffd700;
+  border-radius: 30px;
+  color: #ffd700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.harryNextBtn:hover {
+  background: #ffd700;
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.harry-toast {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 15, 30, 0.9);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid #ffd700;
+  color: #fff;
+  z-index: 100;
+  animation: toastIn 0.5s ease-out;
+  text-align: center;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Artefatos mágicos do Canto do Conforto */
+.harry-artifacts {
+  position: absolute;
+  top: 94px;
+  left: 40px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.artifact-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: rgba(14, 18, 35, 0.72);
+  color: #f7e9b0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+}
+
+.artifact-button:hover,
+.artifact-button.active {
+  transform: translateX(5px);
+  background: rgba(255, 215, 0, 0.14);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.2);
+}
+
+.lumos-on::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 46%, rgba(255, 248, 205, .18), transparent 42%);
+  animation: lumosBreath 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes lumosBreath {
+  from { opacity: .45; }
+  to { opacity: 1; }
+}
+
+.selector-overlay,
+.pensieve-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(4, 8, 18, .86);
+  backdrop-filter: blur(8px);
+  animation: fadeIn .4s ease-out;
+}
+
+.selector-card,
+.pensieve-card {
+  width: min(100%, 520px);
+  padding: 38px;
+  border-radius: 24px;
+  text-align: center;
+  color: #fdf8e1;
+  background: linear-gradient(145deg, rgba(42, 30, 22, .98), rgba(16, 21, 37, .98));
+  border: 1px solid rgba(255, 215, 0, .55);
+  box-shadow: 0 0 70px rgba(255, 215, 0, .18), 0 24px 70px rgba(0, 0, 0, .5);
+  animation: artifactAppear .65s cubic-bezier(.17, .89, .32, 1.28);
+}
+
+.selector-hat,
+.pensieve-symbol {
+  font-size: 65px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 16px rgba(255, 215, 0, .55));
+}
+
+.selector-whisper,
+.pensieve-label {
+  display: block;
+  color: #e5c86b;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.selector-card h2 {
+  color: #ffd700;
+  letter-spacing: 7px;
+  margin: 8px 0 20px;
+  font-size: 28px;
+}
+
+.selector-card p,
+.pensieve-card p {
+  color: #e7e2d5;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.selector-note {
+  color: #c9b98c !important;
+  font-style: italic;
+  font-size: 15px !important;
+}
+
+.pensieve-card {
+  background: radial-gradient(circle at 50% 0%, rgba(101, 187, 210, .22), transparent 46%), linear-gradient(145deg, rgba(11, 34, 48, .98), rgba(12, 17, 31, .98));
+  border-color: rgba(145, 226, 238, .65);
+  box-shadow: 0 0 70px rgba(93, 206, 224, .2), 0 24px 70px rgba(0, 0, 0, .5);
+}
+
+.pensieve-symbol {
+  color: #a9eef2;
+  filter: drop-shadow(0 0 16px rgba(120, 230, 240, .7));
+}
+
+.pensieve-label { color: #a9eef2; }
+
+.pensieve-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.pensieve-actions button {
+  border: 1px solid rgba(169, 238, 242, .5);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #dffcff;
+  background: rgba(130, 216, 228, .1);
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.pensieve-actions button:hover { background: rgba(130, 216, 228, .24); transform: translateY(-2px); }
+
+@keyframes artifactAppear {
+  from { opacity: 0; transform: translateY(22px) scale(.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 700px) {
+  .harry-artifacts { top: 82px; left: 14px; }
+  .artifact-button { padding: 8px 11px; }
+  .artifact-button span { display: none; }
+  .selector-card, .pensieve-card { padding: 28px 22px; }
+}
+
+a[aria-label], button { -webkit-tap-highlight-color: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lumos-on::before,
+  .selector-card,
+  .pensieve-card { animation: none; }
+}
+
+/* Espelho de Ojesed — descoberta escondida */
+.mirror-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1120;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: radial-gradient(circle, rgba(91, 81, 143, .22), rgba(3, 5, 15, .94) 68%);
+  backdrop-filter: blur(9px);
+  animation: fadeIn .45s ease-out;
+}
+
+.mirror-card {
+  width: min(100%, 560px);
+  max-height: min(92vh, 760px);
+  overflow-y: auto;
+  padding: 30px 34px 34px;
+  border-radius: 24px;
+  text-align: center;
+  color: #f9f2e4;
+  background: linear-gradient(155deg, rgba(28, 25, 51, .98), rgba(10, 14, 29, .98));
+  border: 1px solid rgba(196, 184, 247, .52);
+  box-shadow: 0 0 100px rgba(121, 107, 206, .22), 0 28px 80px rgba(0,0,0,.6);
+  animation: mirrorReveal .75s cubic-bezier(.17,.89,.32,1.28);
+}
+
+.mirror-card::-webkit-scrollbar { width: 5px; }
+.mirror-card::-webkit-scrollbar-thumb { background: rgba(196,184,247,.55); border-radius: 99px; }
+
+.mirror-frame {
+  width: min(100%, 310px);
+  margin: 0 auto 22px;
+  padding: 13px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(135deg, #8d7a4d, #e5d69b 28%, #625238 67%, #c4ad6f);
+  box-shadow: 0 0 25px rgba(227, 208, 142, .4), inset 0 0 0 3px rgba(39, 29, 19, .65);
+}
+
+.mirror-glass {
+  min-height: 230px;
+  border-radius: 50% 50% 45% 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  background: radial-gradient(circle at 50% 38%, rgba(211, 209, 255, .44), transparent 7%), radial-gradient(ellipse at center, rgba(115, 126, 186, .56), rgba(22, 29, 61, .9) 68%);
+  box-shadow: inset 0 0 32px rgba(225, 229, 255, .22), 0 0 35px rgba(110, 130, 229, .25);
+  animation: glassShimmer 5s ease-in-out infinite;
+}
+
+.mirror-stars { color: #f5e8a8; letter-spacing: 4px; text-shadow: 0 0 12px #fff1a3; }
+.mirror-silhouette { color: rgba(250,248,255,.8); font: 90px/1 "Cormorant Garamond", serif; text-shadow: 0 0 20px #d6d8ff; }
+.mirror-reflection { max-width: 230px; color: #e2e1ff; font-size: 15px; line-height: 1.5; font-style: italic; }
+.mirror-label { display: block; color: #d9cafb; letter-spacing: 2px; text-transform: uppercase; font-size: 11px; }
+.mirror-card h2 { margin: 10px 0 14px; color: #fff0ad; font: 500 30px "Cormorant Garamond", serif; }
+.mirror-card > p { color: #e8e4f1; font-size: 16px; line-height: 1.7; }
+.mirror-card .mirror-flirt { color: #d7c8f3; font-style: italic; font-size: 14px; }
+
+@keyframes mirrorReveal {
+  from { opacity: 0; transform: scale(.86) translateY(25px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes glassShimmer {
+  0%, 100% { filter: brightness(.92); }
+  50% { filter: brightness(1.16); }
+}
+
+.pensieve-ripples {
+  position: relative;
+  width: 88px;
+  height: 14px;
+  margin: 12px auto 2px;
+}
+
+.pensieve-ripples i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(169,238,242,.55);
+  border-radius: 50%;
+  animation: ripple 2.8s ease-out infinite;
+}
+
+.pensieve-ripples i:nth-child(2) { animation-delay: .9s; }
+.pensieve-ripples i:nth-child(3) { animation-delay: 1.8s; }
+
+@keyframes ripple {
+  from { opacity: .8; transform: scale(.4); }
+  to { opacity: 0; transform: scale(1.3); }
+}
+
+@media (max-width: 600px) {
+  .mirror-card { padding: 24px 20px 26px; }
+  .mirror-glass { min-height: 190px; }
+  .mirror-silhouette { font-size: 74px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mirror-card, .mirror-glass, .pensieve-ripples i { animation: none; }
+}
+
+/* Cerimônia personalizada da Casa Kamy */
+.selector-game {
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,215,0,.22);
+}
+.selector-game-kicker, .spellbook-label { display: block; color: #e5c86b; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
+.selector-game p { font-size: 15px; line-height: 1.5; }
+.selector-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 13px; }
+.selector-options button {
+  border: 1px solid rgba(255,215,0,.24);
+  border-radius: 10px;
+  padding: 9px 7px;
+  color: #f3e6c7;
+  background: rgba(255,215,0,.06);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+.selector-options button:hover, .selector-options button.selected { color: #231b0e; background: #f4d56f; border-color: #f4d56f; }
+.selector-analysis { color: #dfc18a !important; font-size: 13px !important; margin: 14px 0 0 !important; font-style: italic; }
+
+/* Livro de Feitiços */
+.spellbook-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(3, 6, 15, .86);
+  backdrop-filter: blur(8px);
+  animation: fadeIn .4s ease-out;
+}
+.spellbook-card {
+  width: min(100%, 570px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px 32px;
+  text-align: center;
+  color: #f9f0db;
+  border: 1px solid rgba(188, 148, 77, .6);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #2a211d, #0e192c);
+  box-shadow: 0 0 80px rgba(205,161,74,.18), 0 25px 70px rgba(0,0,0,.65);
+  animation: artifactAppear .65s cubic-bezier(.17,.89,.32,1.28);
+}
+.spellbook-card h2 { margin: 5px 0 18px; color: #ffe49a; font: 500 30px "Cormorant Garamond", serif; }
+.spellbook-cover { width: 58px; height: 58px; display: grid; place-items: center; margin: 0 auto 13px; border: 1px solid rgba(255,220,137,.55); border-radius: 10px; color: #ffe39a; font-size: 28px; box-shadow: 0 0 18px rgba(255,215,0,.22); }
+.spell-list { display: grid; gap: 8px; text-align: left; }
+.spell-list button { display: grid; gap: 4px; padding: 12px 14px; border: 1px solid rgba(255,215,0,.22); border-radius: 11px; color: #f2e6cb; background: rgba(255,255,255,.04); cursor: pointer; transition: .25s ease; }
+.spell-list button:hover, .spell-list button.active { border-color: rgba(255,215,0,.7); background: rgba(255,215,0,.12); transform: translateX(4px); }
+.spell-list strong { color: #ffd870; font-size: 14px; letter-spacing: 1px; }
+.spell-list span { color: #dad3c2; font-size: 12px; line-height: 1.45; }
+.spell-result { margin: 17px 0 0; color: #c6edff; font-size: 14px; line-height: 1.55; animation: fadeIn .4s ease-out; }
+
+@media (max-width: 600px) {
+  .selector-options { grid-template-columns: 1fr; }
+  .spellbook-card { padding: 24px 19px; }
+  .spellbook-card h2 { font-size: 26px; }
+}
