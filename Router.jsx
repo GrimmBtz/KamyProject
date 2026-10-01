@@ -14,10 +14,7 @@ import Galeria     from "../pages/Galeria";
 import Playlist    from "../pages/Playlist";
 import SintoniaNerd from "../pages/SintoniaNerd";
 import FinalLetter from "../pages/FinalLetter";
-<<<<<<< HEAD
 import Aniversario  from "../pages/Aniversario";
-=======
->>>>>>> d99021ac3da00ce23ea7c8b299ee14547d7e9c8c
 
 export default function Router() {
   return (
@@ -38,10 +35,7 @@ export default function Router() {
         <Route path="/playlist"  element={<Playlist />}    />
         <Route path="/sintonia-nerd" element={<SintoniaNerd />} />
         <Route path="/final"     element={<FinalLetter />} />
-<<<<<<< HEAD
         <Route path="/aniversario" element={<Aniversario />} />
-=======
->>>>>>> d99021ac3da00ce23ea7c8b299ee14547d7e9c8c
       </Routes>
     </HashRouter>
   );

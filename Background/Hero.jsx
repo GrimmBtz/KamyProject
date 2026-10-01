@@ -30,7 +30,6 @@ export default function Hero() {
         Abrir a primeira carta ✉
       </button>
 
-<<<<<<< HEAD
       <button
         className="birthdayButton"
         onClick={() => navigate("/aniversario")}
@@ -47,8 +46,6 @@ export default function Hero() {
         <button type="button" onClick={() => navigate("/pets")}>🐾 Pets</button>
       </nav>
 
-=======
->>>>>>> d99021ac3da00ce23ea7c8b299ee14547d7e9c8c
     </section>
   );
 }

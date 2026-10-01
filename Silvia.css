@@ -1,0 +1,168 @@
+.silviaPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 2s ease;
+}
+
+.silviaPage.sunset-sky {
+  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+}
+
+.silvia-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.silviaContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Cena do Carro e Estrada */
+.silvia-scene {
+  position: relative;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.car-silvia {
+  font-size: 80px;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+  transition: transform 0.3s;
+}
+
+.car-silvia:hover {
+  transform: scale(1.05);
+}
+
+.headlight {
+  position: absolute;
+  bottom: 20px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s, box-shadow 0.5s;
+}
+
+.headlight.left { left: 10px; }
+.headlight.right { right: 10px; }
+
+.headlights-on .headlight {
+  opacity: 1;
+  box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.8), 0 0 100px 40px rgba(255, 255, 255, 0.4);
+}
+
+.road {
+  width: 100%;
+  height: 40px;
+  background: #333;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.road-lines {
+  width: 200%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 40px,
+    #fff 40px,
+    #fff 80px
+  );
+  position: absolute;
+  left: 0;
+}
+
+.driving .road-lines {
+  animation: roadMove 1s linear infinite;
+}
+
+@keyframes roadMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-80px); }
+}
+
+.driving .car-silvia {
+  animation: carVibrate 0.1s infinite;
+}
+
+@keyframes carVibrate {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+/* Textos */
+.silvia-text-box {
+  min-height: 150px;
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.hint-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.reveal-text p {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.drive-btn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.drive-btn:hover {
+  background: #fff;
+  color: #ff7e5f;
+}
+
+.driving-text p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.silviaNextBtn {
+  display: inline-block;
+  padding: 12px 35px;
+  background: #fff;
+  color: #ff7e5f;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
