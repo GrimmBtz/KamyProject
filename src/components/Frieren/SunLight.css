@@ -1,0 +1,27 @@
+.sunLight{
+
+position:fixed;
+
+top:-150px;
+right:-120px;
+
+width:700px;
+height:700px;
+
+background:radial-gradient(
+
+rgba(255,248,190,.95),
+
+rgba(255,248,190,.45),
+
+transparent 70%
+
+);
+
+filter:blur(8px);
+
+pointer-events:none;
+
+z-index:1;
+
+}

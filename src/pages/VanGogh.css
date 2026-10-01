@@ -1,0 +1,220 @@
+.vangoghPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.vangoghOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.4));
+  z-index: 5;
+}
+
+.vangoghContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.vangoghTag {
+  display: block;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #f1c40f;
+  margin-bottom: 15px;
+}
+
+.vangoghContent h1 {
+  font-size: 42px;
+  font-family: "Cormorant Garamond", serif;
+  color: #f5e7d2;
+  margin-bottom: 10px;
+}
+
+.quote {
+  font-style: italic;
+  color: #9fc8ff;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* Pintura Viva */
+.painting-container {
+  margin: 0 auto 40px;
+  max-width: 600px;
+  perspective: 1000px;
+}
+
+.painting-frame {
+  background: #3d2b1f;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  transform: rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+
+.painting-frame:hover {
+  transform: rotateX(0deg) scale(1.02);
+}
+
+.painting-canvas {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.canvas-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: saturate(1.5);
+}
+
+.sunflowers {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+  z-index: 15;
+}
+
+.sunflower {
+  font-size: 40px;
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.s1 { animation-delay: 0s; }
+.s2 { animation-delay: 0.5s; }
+.s3 { animation-delay: 1s; }
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.painting-text {
+  position: relative;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.painting-hint {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #f1c40f;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Pinceladas */
+.pincelada {
+  position: fixed;
+  width: 60px;
+  height: 15px;
+  border-radius: 30px;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.6;
+  filter: blur(2px);
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+}
+
+/* Estrelas VG */
+.vanGogh-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vg-star {
+  position: absolute;
+  background: radial-gradient(circle, #fff, #f1c40f, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 6;
+  animation: vgTwinkle 4s infinite;
+}
+
+@keyframes vgTwinkle {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.3); opacity: 0.8; box-shadow: 0 0 20px #f1c40f; }
+}
+
+.vanGogh-messages {
+  margin-bottom: 40px;
+}
+
+.vg-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #f1c40f;
+  display: inline-block;
+}
+
+.vg-card p {
+  color: #f5e7d2;
+  font-size: 16px;
+  margin: 0;
+}
+
+.vangoghNextBtn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(241, 196, 15, 0.1);
+  border: 1px solid #f1c40f;
+  border-radius: 30px;
+  color: #f1c40f;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.vangoghNextBtn:hover {
+  background: #f1c40f;
+  color: #1a1a1a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(241, 196, 15, 0.3);
+}
+
+@media (max-width: 768px) {
+  .vangoghContent h1 { font-size: 32px; }
+  .painting-frame { padding: 10px; }
+}

@@ -1,0 +1,54 @@
+.light{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+
+circle at top,
+
+rgba(255,255,255,.35),
+
+transparent 55%
+
+),
+
+linear-gradient(
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.15)
+
+);
+
+animation:
+
+lightMove 12s ease-in-out infinite;
+
+}
+@keyframes lightMove{
+
+0%{
+
+opacity:.5;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.5;
+
+}
+
+}

@@ -1,0 +1,58 @@
+/* ============================================================
+   MagicFrieren.css — Efeito de magia no cursor (Frieren)
+   pointer-events: none para não bloquear cliques nos botões
+   ============================================================ */
+
+.magic-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.magic-element {
+  position: absolute;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  animation: growMagic 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes growMagic {
+  from {
+    transform: translate(-50%, -50%) scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.tree-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(45, 90, 39, 0.5));
+}
+
+.flower-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 0 0 15px currentColor;
+}
+
+.petal-magic {
+  position: absolute;
+  width: 40%;
+  height: 70%;
+  background: inherit;
+  left: 30%;
+  top: -10%;
+  border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+  transform-origin: bottom center;
+  opacity: 0.8;
+}
