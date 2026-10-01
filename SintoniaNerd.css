@@ -1,0 +1,116 @@
+.sintoniaPage {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  color: #f7ecd9;
+  background: radial-gradient(circle at 50% 0%, rgba(106, 71, 111, .24), transparent 42%), #070d1b;
+}
+
+.sintoniaContent {
+  width: min(100% - 36px, 980px);
+  margin: 0 auto;
+  padding: 84px 0 90px;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.sintoniaTag, .worldKicker, .revealKicker {
+  color: #d5b37e;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.sintoniaContent h1 {
+  margin: 14px 0 8px;
+  font: 400 clamp(42px, 8vw, 76px)/.95 "Cormorant Garamond", Georgia, serif;
+  color: #fff3dc;
+  text-shadow: 0 0 28px rgba(242, 197, 110, .18);
+}
+
+.sintoniaLead {
+  max-width: 630px;
+  margin: 0 auto;
+  color: rgba(247, 236, 217, .76);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.sintoniaConstellation { display: flex; justify-content: center; align-items: center; gap: 18px; margin: 24px 0 34px; color: #edc46b; opacity: .78; }
+.sintoniaConstellation span:nth-child(2n) { color: #87c7d8; opacity: .7; }
+
+.worldGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 18px; }
+.worldCard {
+  min-height: 210px;
+  padding: 28px 26px;
+  border-radius: 18px;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+.worldCard:hover, .worldCard.worldActive { transform: translateY(-6px); }
+.wizardWorld { border: 1px solid rgba(231, 193, 105, .38); background: linear-gradient(135deg, rgba(83, 44, 73, .72), rgba(23, 26, 50, .83)); box-shadow: 0 18px 60px rgba(62, 25, 69, .22); }
+.scienceWorld { border: 1px solid rgba(115, 206, 228, .32); background: linear-gradient(135deg, rgba(20, 61, 83, .75), rgba(14, 22, 43, .86)); box-shadow: 0 18px 60px rgba(12, 82, 105, .18); }
+.wizardWorld.worldActive { border-color: #e7c169; box-shadow: 0 0 0 1px rgba(231, 193, 105, .22), 0 18px 70px rgba(119, 67, 72, .3); }
+.scienceWorld.worldActive { border-color: #73cee4; box-shadow: 0 0 0 1px rgba(115, 206, 228, .2), 0 18px 70px rgba(12, 117, 142, .24); }
+.worldMark { font-size: 25px; color: #f0c76a; }
+.scienceWorld .worldMark { color: #7dd8ed; }
+.worldCard strong { font: 400 32px/1.05 "Cormorant Garamond", Georgia, serif; }
+.worldCard small { max-width: 290px; color: rgba(255,255,255,.7); line-height: 1.5; font-size: 13px; }
+
+.worldReveal, .cantadaPanel, .comfortDecoder, .secretDoorPanel {
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 18px;
+  background: rgba(7, 14, 30, .72);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, .18);
+}
+.worldReveal { padding: 28px 30px; text-align: left; animation: revealUp .55s ease both; }
+.worldReveal.wizard { border-color: rgba(231, 193, 105, .3); }
+.worldReveal.science { border-color: rgba(115, 206, 228, .28); }
+.worldReveal h2, .cantadaPanel h2, .comfortDecoder h2 { margin: 10px 0; font: 400 30px/1.1 "Cormorant Garamond", Georgia, serif; color: #fff3dc; }
+.worldReveal p, .cantadaPanel p, .comfortDecoder p { color: rgba(247, 236, 217, .78); line-height: 1.75; }
+.revealTokens { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.revealTokens span { padding: 8px 11px; border-radius: 999px; background: rgba(255, 255, 255, .07); color: #dfc995; font-size: 12px; }
+
+.secretDoorPanel { margin-top: 18px; padding: 22px; display: grid; grid-template-columns: minmax(200px, 270px) 1fr; gap: 24px; align-items: center; text-align: left; }
+.apartmentDoor { min-height: 190px; padding: 22px; border-radius: 12px; background: linear-gradient(135deg, #5a3c31, #241c28); border: 1px solid rgba(212, 166, 115, .35); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 9px; box-shadow: inset 0 0 0 5px rgba(33, 21, 25, .22); transition: background .4s ease, box-shadow .4s ease; }
+.apartmentDoor.doorIsOpen { background: linear-gradient(135deg, #24495b, #241f3c); box-shadow: 0 0 30px rgba(101, 196, 224, .24), inset 0 0 0 5px rgba(101, 196, 224, .12); }
+.doorNumber { color: #f1d290; font: 400 32px Georgia, serif; }
+.doorLabel { font-size: 11px; color: rgba(255,255,255,.7); line-height: 1.4; }
+.apartmentDoor button, .cantadaPanel button, .comfortDecoder button, .sintoniaNextBtn { border: 1px solid rgba(238, 206, 138, .36); border-radius: 999px; background: rgba(214, 161, 79, .16); color: #f7e8c6; padding: 10px 16px; font: inherit; cursor: pointer; text-decoration: none; transition: .3s ease; }
+.apartmentDoor button:hover, .cantadaPanel button:hover, .comfortDecoder button:hover, .sintoniaNextBtn:hover { transform: translateY(-2px); background: rgba(214, 161, 79, .28); }
+.apartmentDoor small { color: #9bd3df; letter-spacing: 3px; text-transform: uppercase; font-size: 10px; }
+.doorReveal { margin: 0; color: rgba(247,236,217,.78); line-height: 1.75; }
+
+.cantadaPanel, .comfortDecoder { margin-top: 18px; padding: 27px 30px; }
+.cantadaPanel { background: linear-gradient(135deg, rgba(45, 29, 67, .76), rgba(8, 17, 35, .82)); }
+.comfortDecoder { background: linear-gradient(135deg, rgba(21, 55, 65, .74), rgba(8, 18, 35, .83)); }
+.cantadaText { min-height: 58px; font: 400 22px/1.35 "Cormorant Garamond", Georgia, serif; color: #ffe7ae !important; }
+.cantadaCounter { display: block; margin-top: 14px; color: rgba(255,255,255,.45); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+.hiddenSignal { margin: 28px auto 10px; border: 0; background: transparent; color: rgba(244, 211, 132, .38); cursor: pointer; letter-spacing: 6px; transition: .35s ease; }
+.hiddenSignal:hover, .hiddenSignal.signalFound { color: #f4d384; text-shadow: 0 0 18px rgba(244,211,132,.6); }
+.hiddenSignalMessage { max-width: 600px; margin: 0 auto 20px; color: #ddc793; line-height: 1.7; animation: revealUp .45s ease both; }
+.sintoniaNextBtn { display: inline-block; margin-top: 20px; padding-inline: 24px; }
+
+@keyframes revealUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 680px) {
+  .sintoniaContent { width: min(100% - 26px, 560px); padding-top: 60px; }
+  .worldGrid { grid-template-columns: 1fr; }
+  .worldCard strong { font-size: 28px; }
+  .secretDoorPanel { grid-template-columns: 1fr; }
+  .worldReveal, .cantadaPanel, .comfortDecoder { padding: 23px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .worldCard, .apartmentDoor, .hiddenSignal { transition: none; }
+  .worldReveal, .hiddenSignalMessage { animation: none; }
+}

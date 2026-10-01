@@ -1,16 +1,72 @@
-# React + Vite
+# KamyLindona
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site interativo feito para a Kamilly com React, Vite e GitHub Pages.
 
-Currently, two official plugins are available:
+## Rodar localmente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Abra o endereço indicado pelo Vite. A página especial fica em:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+/#/aniversario
+```
 
-## Expanding the ESLint configuration
+## Publicar no GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+O projeto usa `HashRouter` e `base: "./"`, portanto funciona em repositórios GitHub Pages sem configuração de servidor.
+
+```bash
+npm install
+npm run build
+npm run deploy
+```
+
+Depois, acesse:
+
+```text
+https://grimmbtz.github.io/KamyProject/
+```
+
+A página de aniversário fica em:
+
+```text
+https://grimmbtz.github.io/KamyProject/#/aniversario
+```
+
+## O que existe no capítulo de aniversário
+
+- destaque na tela inicial;
+- mini-menu para Hogwarts, The Big Bang Theory, Frieren e Pets;
+- carta de Hogwarts personalizada;
+- Chapéu Seletor com perguntas sobre a Kamilly;
+- aula de Trato das Criaturas Mágicas;
+- Bestiário com animais reais;
+- apartamento 4A, sofá reservado, elevador quebrado e Soft Kitty;
+- experiência científica com conclusão Bazinga;
+- quadro de relacionamentos;
+- Museu da Kamilly;
+- escolha de pet acompanhante;
+- cinco presentes colecionáveis;
+- teoria final e arquivo secreto.
+
+## Personalizar o presente secreto
+
+A senha atual do arquivo secreto é `sempre`. Para mudar, edite a comparação no arquivo:
+
+```text
+src/pages/Aniversario.jsx
+```
+
+Também é possível alterar a mensagem pessoal que aparece quando a senha é correta no mesmo trecho.
+
+## Estrutura importante
+
+- `src/pages/Aniversario.jsx`: conteúdo e interações do capítulo;
+- `src/pages/Aniversario.css`: visual e responsividade;
+- `src/components/Background/Hero.jsx`: destaque e mini-menu da home;
+- `src/components/Background/Hero.css`: estilos do destaque;
+- `src/router/Router.jsx`: rotas do aplicativo.
