@@ -1,0 +1,169 @@
+/* ============================================================
+   Hero.css — Componente Hero da Home
+   Todos os seletores são escopados dentro de .homeHero
+   ============================================================ */
+
+.homeHero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 100;
+  padding: 20px;
+  animation: heroAppear 1.2s ease;
+}
+
+@keyframes heroAppear {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 30px)); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.homeHero .smallTitle {
+  display: block;
+  margin-bottom: 18px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #c8c8c8;
+}
+
+.homeHero h1 {
+  margin: 0 0 28px;
+  font-size: 72px;
+  line-height: 1.1;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  color: #F5E7D2;
+  text-shadow: 0 0 40px rgba(255, 230, 180, 0.25);
+}
+
+.homeHero p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 20px;
+  line-height: 1.9;
+  color: #d8d8d8;
+}
+
+.homeHero .openButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 44px;
+  border: none;
+  border-radius: 50px;
+  background: #d87b22;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.35s;
+  box-shadow: 0 8px 30px rgba(216, 123, 34, 0.35);
+}
+
+.homeHero .openButton:hover {
+  transform: translateY(-5px);
+  background: #ec912d;
+  box-shadow: 0 15px 45px rgba(236, 145, 45, 0.45);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .homeHero h1 { font-size: 48px; }
+  .homeHero p  { font-size: 17px; }
+}
+
+@media (max-width: 480px) {
+  .homeHero h1 { font-size: 36px; }
+  .homeHero p  { font-size: 15px; }
+  .homeHero .openButton { padding: 14px 32px; font-size: 15px; }
+}
+
+.homeUniverseSeal {
+  display: inline-block;
+  margin: -4px 0 17px;
+  color: rgba(255, 220, 150, .76);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 13px rgba(255, 202, 110, .4);
+}
+
+.homeUniverseSeal b { color: #9ddcff; font-weight: 400; padding: 0 5px; }
+
+@media (max-width: 480px) {
+  .homeUniverseSeal { letter-spacing: 1.6px; font-size: 9px; }
+}
+
+.homeHero .birthdayButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding: 13px 22px;
+  border: 1px solid rgba(232, 190, 112, .7);
+  border-radius: 30px;
+  background: linear-gradient(110deg, rgba(112, 73, 159, .65), rgba(190, 132, 47, .48));
+  color: #ffe8af;
+  font-size: 14px;
+  letter-spacing: .03em;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(211, 165, 78, .18);
+  animation: birthdayPulse 3s ease-in-out infinite;
+}
+
+.homeHero .birthdayButton:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(110deg, rgba(133, 84, 183, .78), rgba(215, 157, 57, .65));
+  box-shadow: 0 10px 35px rgba(216, 160, 69, .3);
+}
+
+.homeMenuHint {
+  margin-top: 14px;
+  color: rgba(222, 225, 235, .64);
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
+@keyframes birthdayPulse {
+  0%, 100% { box-shadow: 0 0 25px rgba(211, 165, 78, .18); }
+  50% { box-shadow: 0 0 34px rgba(211, 165, 78, .38); }
+}
+
+@media (max-width: 480px) {
+  .homeHero .birthdayButton { padding: 11px 15px; font-size: 12px; }
+  .homeMenuHint { font-size: 10px; }
+}
+
+.storyMenu {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.storyMenu button {
+  padding: 7px 10px;
+  border: 1px solid rgba(157, 194, 233, .24);
+  border-radius: 20px;
+  background: rgba(10, 20, 40, .38);
+  color: rgba(224, 231, 245, .78);
+  font-size: 10px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.storyMenu button:hover {
+  color: #ffe0a0;
+  border-color: rgba(230, 190, 112, .65);
+  background: rgba(150, 102, 48, .24);
+  transform: translateY(-2px);
+}
