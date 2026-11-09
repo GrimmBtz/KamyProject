@@ -1,0 +1,98 @@
+.cantinhoPage{position:relative;width:100%;min-height:100vh;overflow-x:hidden}
+.cantinhoPage.warm::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 40%,rgba(255,200,120,.12),transparent 70%);animation:cantFade 2s ease-out}
+@keyframes cantFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* Abertura */
+.cantHero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px 20px}
+.cantHeroImg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;animation:cantZoom 22s linear infinite alternate}
+@keyframes cantZoom{from{transform:scale(1)}to{transform:scale(1.1)}}
+.cantHeroShade{position:absolute;inset:0;background:radial-gradient(circle,transparent 10%,rgba(7,17,31,.85)),linear-gradient(to bottom,transparent 60%,#07111F)}
+.cantHeroText{position:relative;z-index:5;max-width:760px;animation:cantFade 1.6s ease-out}
+.cantTag{display:block;letter-spacing:4px;text-transform:uppercase;font-size:13px;color:#d7b892;margin-bottom:14px}
+.cantHeroText h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:60px;line-height:1.1;color:#F5E7D2;text-shadow:0 0 40px rgba(255,230,180,.3);margin-bottom:18px}
+.cantLead{font-size:18px;color:#ddd;margin-bottom:40px}
+.cantScroll{display:inline-block;color:#ffe9a8;font-size:22px;animation:cantBob 2.8s ease-in-out infinite;text-shadow:0 0 14px #ffd76b}
+@keyframes cantBob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(12px);opacity:1}}
+.cantRing{position:absolute;z-index:3;width:min(80vw,560px);aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cantRing i{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(157,220,255,.35);animation:cantSpin 40s linear infinite}
+.cantRing i:nth-child(2){inset:9%;border-color:rgba(255,224,160,.35);animation-duration:60s;animation-direction:reverse}
+.cantRing i:nth-child(3){inset:18%;border-style:dotted;animation-duration:80s}
+@keyframes cantSpin{to{transform:rotate(360deg)}}
+
+/* Conteúdo */
+.cantContent{position:relative;z-index:10;max-width:760px;margin:0 auto;padding:40px 20px 100px;text-align:center}
+.cantMsg{font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.8;color:#f0e4cf;margin-bottom:110px}
+.cantSection{margin-bottom:110px}
+.cantSection h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:38px;color:#F5E7D2;margin-bottom:30px}
+.cantPhrase{font-family:"Cormorant Garamond",serif;font-size:21px;color:#ddd;min-height:34px;margin-top:20px;animation:cantFade .8s ease-out}
+.cantPhrase.gold{color:#ffe8af}
+.cantBtn,.cantActions button{padding:12px 26px;border-radius:30px;border:1px solid #d7b892;background:rgba(215,184,146,.15);color:#f5e7d2;font-size:14px;cursor:pointer;transition:.3s}
+.cantBtn:hover,.cantActions button:hover{background:#d7b892;color:#1a1a1a;transform:translateY(-3px)}
+
+/* Velas */
+.cantCandles{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:10px 0 6px}
+.cantCandle{position:relative;width:34px;height:110px;background:none;border:none;cursor:pointer;animation:cantHover 5s ease-in-out infinite}
+@keyframes cantHover{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.cantCandle .wax{position:absolute;bottom:0;left:6px;width:22px;height:70px;border-radius:4px;background:linear-gradient(#f6ecd6,#d9c8a2)}
+.cantCandle .flame{position:absolute;bottom:68px;left:11px;width:12px;height:24px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#556;opacity:.35;transition:.6s}
+.cantCandle.lit .flame{background:radial-gradient(#fff6c8,#ffb84a);opacity:1;box-shadow:0 0 22px 8px rgba(255,190,90,.6);animation:cantFlick 1.4s ease-in-out infinite}
+@keyframes cantFlick{0%,100%{transform:scale(1)}50%{transform:scale(1.15,.92)}}
+
+/* Quadro TBBT */
+.cantBoard{background:#e9e4d6;color:#223;border-radius:8px;padding:26px 20px;margin:0 auto 26px;max-width:520px;box-shadow:0 15px 35px rgba(0,0,0,.4);transform:rotate(-1deg)}
+.cantBoard code{display:block;font-family:'Courier New',monospace;font-size:19px;margin-bottom:8px}
+.cantBoard small{color:#667;font-size:12px}
+
+/* Silvia */
+.cantRoad{position:relative;height:190px;margin:0 auto 24px;max-width:640px;border-radius:20px;overflow:hidden;background:linear-gradient(#0c1a33,#1a2745 70%,#2a2540);border:1px solid rgba(255,255,255,.1)}
+.cantMoonSmall{position:absolute;right:12%;top:14%;width:30px;height:30px;border-radius:50%;background:#FFF8D8;box-shadow:0 0 30px rgba(255,255,220,.7)}
+.cantRoad .cantLine{position:absolute;bottom:26px;left:0;width:200%;height:3px;background:repeating-linear-gradient(90deg,#ddd 0 40px,transparent 40px 80px);opacity:.6}
+.cantRoad.go .cantLine{animation:cantRoad 1.2s linear infinite}
+@keyframes cantRoad{to{transform:translateX(-80px)}}
+.cantCar{position:absolute;bottom:20px;left:50%;width:210px;transform:translateX(-50%);filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+.cantRoad.go .cantCar{animation:cantRock 1s ease-in-out infinite}
+@keyframes cantRock{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-2px)}}
+.cantBeam{position:absolute;bottom:42px;left:calc(50% + 100px);width:0;height:30px;background:linear-gradient(90deg,rgba(255,246,200,.5),transparent);clip-path:polygon(0 40%,100% 0,100% 100%,0 60%);transition:width 1s}
+.cantRoad.go .cantBeam{width:200px}
+
+/* Piano */
+.cantPiano{display:flex;justify-content:center;gap:4px;margin-bottom:24px}
+.cantKey{width:56px;height:170px;border:none;border-radius:0 0 8px 8px;background:linear-gradient(#fdfaf2,#e4dccb);color:#556;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;transition:.15s;box-shadow:0 6px 12px rgba(0,0,0,.35)}
+.cantKey:hover{background:linear-gradient(#fff,#f0e6cf)}
+.cantKey.down{transform:translateY(5px);background:#ffe8af;box-shadow:0 0 24px rgba(255,220,130,.6)}
+
+/* Animais */
+.cantAnimals{display:flex;align-items:flex-end;justify-content:center;gap:10px;flex-wrap:wrap;min-height:120px}
+.cantAnimal{background:none;border:none;cursor:pointer;font-size:42px;transition:.4s;animation:cantHover 6s ease-in-out infinite}
+.cantAnimal.big{font-size:84px}
+.cantAnimal:hover,.cantAnimal.active{transform:scale(1.15);filter:drop-shadow(0 0 14px rgba(255,224,160,.6))}
+
+/* Carta */
+.cantLetter{position:relative;background:#F3E7D1;color:#3b2f22;border-radius:6px;padding:44px 30px 32px;margin-bottom:60px;box-shadow:0 15px 35px rgba(0,0,0,.4);text-align:left}
+.cantLetter .seal{position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-size:34px;background:#F3E7D1;border-radius:50%;width:48px;height:48px;display:grid;place-items:center;box-shadow:0 6px 14px rgba(0,0,0,.35)}
+.cantLetter p{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.8}
+.cantActions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px}
+.cantReplies{min-height:70px;margin-bottom:60px}
+.cantReply{font-family:"Cormorant Garamond",serif;font-size:21px;color:#ffe8af;margin-bottom:8px;animation:cantFade .8s ease-out}
+.cantFinal{font-family:"Cormorant Garamond",serif;font-size:32px;color:#F5E7D2;text-shadow:0 0 30px rgba(255,230,180,.3);margin-bottom:50px}
+.cantBack{color:#d7b892;font-size:14px;text-decoration:none}
+.cantBack:hover{color:#fff}
+
+.cantReveal{opacity:0;transform:translateY(28px);transition:opacity 1.2s ease,transform 1.2s ease}
+.cantReveal.on{opacity:1;transform:none}
+.cantRunes{position:fixed;inset:0;pointer-events:none;z-index:1}
+.cantRunes i{position:absolute;width:6px;height:6px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 14px #ffd76b;animation:cantFloat 9s ease-in-out infinite}
+.cantRunes i:nth-child(1){left:12%;top:30%}.cantRunes i:nth-child(2){left:82%;top:45%;animation-delay:2s}
+.cantRunes i:nth-child(3){left:25%;top:70%;animation-delay:4s}.cantRunes i:nth-child(4){left:70%;top:80%;animation-delay:1s}
+.cantRunes i:nth-child(5){left:50%;top:15%;animation-delay:3s}.cantRunes i:nth-child(6){left:92%;top:20%;animation-delay:5s}.cantRunes i:nth-child(7){left:6%;top:88%;animation-delay:6s}
+@keyframes cantFloat{0%,100%{transform:translateY(0);opacity:.25}50%{transform:translateY(-30px);opacity:1}}
+
+@media(max-width:768px){
+  .cantHeroText h1{font-size:38px}.cantSection h2{font-size:30px}.cantMsg{font-size:20px}
+  .cantLetter{padding:40px 20px 24px}.cantLetter p{font-size:19px}.cantFinal{font-size:25px}
+  .cantKey{width:11vw;max-width:56px;height:130px}.cantAnimal.big{font-size:64px}.cantCar{width:160px}.cantBeam{left:calc(50% + 76px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .cantHeroImg,.cantRing i,.cantScroll,.cantCandle,.cantAnimal,.cantRunes i,.cantCandle.lit .flame,.cantRoad.go .cantLine,.cantRoad.go .cantCar,.cantHeroText,.cantPhrase,.cantReply{animation:none}
+  .cantReveal{opacity:1;transform:none;transition:none}
+}

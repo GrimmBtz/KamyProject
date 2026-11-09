@@ -30,12 +30,18 @@ export default function Hero() {
         Abrir a primeira carta ✉
       </button>
 
-<<<<<<< HEAD
       <button
         className="birthdayButton"
         onClick={() => navigate("/aniversario")}
       >
         ✦ Capítulo especial: aniversário da Kamilly
+      </button>
+
+      <button
+        className="cantinhoButton"
+        onClick={() => navigate("/cantinho")}
+      >
+        🕯️ Um cantinho para quando o dia pesar
       </button>
 
       <span className="homeMenuHint">ou continue a jornada para visitar as outras histórias</span>
@@ -45,10 +51,9 @@ export default function Hero() {
         <button type="button" onClick={() => navigate("/tbbt")}>🔬 TBBT</button>
         <button type="button" onClick={() => navigate("/frieren")}>🌸 Frieren</button>
         <button type="button" onClick={() => navigate("/pets")}>🐾 Pets</button>
+        <button type="button" onClick={() => navigate("/cantinho")}>🕯️ Um cantinho</button>
       </nav>
 
-=======
->>>>>>> d99021ac3da00ce23ea7c8b299ee14547d7e9c8c
     </section>
   );
 }
